@@ -59,6 +59,41 @@
       padding-bottom: 10px;
     }
     
+    .section {
+      margin-bottom: 40px;
+    }
+    
+    .info-box {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #667eea;
+    }
+    
+    .info-box h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+    
+    .info-box p {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    
+    .highlight-box {
+      background: #e8f5e9;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+      border-left: 4px solid #4caf50;
+    }
+    
+    .highlight-box strong {
+      color: #2e7d32;
+    }
+    
     .contact-section {
       background: #f8f9fa;
       padding: 25px;
@@ -68,12 +103,14 @@
     
     ul {
       list-style: none;
+      margin-left: 0;
     }
     
     li {
       padding: 12px 0;
-      font-size: 1.1em;
+      font-size: 1.05em;
       color: #555;
+      line-height: 1.6;
     }
     
     li:before {
@@ -155,21 +192,77 @@
   <div class="container">
     <header>
       <h1>Welcome to Daily Wellness Check</h1>
-      <p class="tagline">Independent software developer providing custom messaging and integration solutions.</p>
+      <p class="tagline">Personal wellness reminder and notification service for individual health management.</p>
     </header>
     
     <div class="content">
-      <h2>Contact</h2>
-      <div class="contact-section">
-        <ul>
-          <li>Email: larry.lemmon.ll@gmail.com</li>
-          <li>Phone: (317)397-9578</li>
-        </ul>
+      <div class="section">
+        <h2>About Our Service</h2>
+        <div class="info-box">
+          <p>
+            Daily Wellness Check is a personal notification system that sends SMS reminders and wellness check-ins 
+            to help individuals maintain their health routines. This service is provided for personal use to support 
+            daily health tracking and medication reminders.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>SMS Messaging & Opt-In Process</h2>
+        <div class="info-box">
+          <h3>How You Consent to Receive Messages</h3>
+          <p>
+            Users provide explicit consent to receive SMS messages through one of the following methods:
+          </p>
+          <ul>
+            <li>Direct verbal consent via phone call where the user provides their phone number and confirms they wish to receive wellness check messages</li>
+            <li>Written consent via email requesting enrollment in the service</li>
+            <li>Explicit opt-in during initial setup where users provide their phone number specifically to receive daily wellness reminders</li>
+          </ul>
+          
+          <div class="highlight-box">
+            <p><strong>Message Frequency:</strong> Users will receive approximately 1-3 SMS messages per day, depending on their configured wellness check schedule.</p>
+          </div>
+          
+          <h3>Types of Messages You'll Receive</h3>
+          <p>Messages are transactional and informational in nature, including:</p>
+          <ul>
+            <li>Daily wellness check reminders (e.g., "Time for your daily wellness check! Reply YES when complete.")</li>
+            <li>Medication reminders (e.g., "Reminder: Take your morning medication")</li>
+            <li>Health tracking prompts (e.g., "Don't forget to log your water intake today")</li>
+            <li>Confirmation messages acknowledging your responses</li>
+          </ul>
+          
+          <h3>How to Opt-Out</h3>
+          <p>
+            You may stop receiving messages at any time by:
+          </p>
+          <ul>
+            <li>Replying STOP to any message</li>
+            <li>Emailing larry.lemmon.ll@gmail.com with your opt-out request</li>
+            <li>Calling (317)397-9578 to request removal</li>
+          </ul>
+          <p style="margin-top: 15px;">
+            There are no fees to opt-out. Standard message and data rates from your mobile carrier may apply to SMS messages.
+          </p>
+        </div>
       </div>
       
-      <h2>Privacy Policy</h2>
-      <div class="privacy-section">
-        <a href="privacy.html?v=20251025">View our Privacy Policy</a>
+      <div class="section">
+        <h2>Contact</h2>
+        <div class="contact-section">
+          <ul>
+            <li>Email: larry.lemmon.ll@gmail.com</li>
+            <li>Phone: (317)397-9578</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2>Privacy Policy</h2>
+        <div class="privacy-section">
+          <a href="privacy.html?v=20251025">View our Privacy Policy</a>
+        </div>
       </div>
     </div>
     
