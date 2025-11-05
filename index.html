@@ -474,18 +474,11 @@
       document.getElementById('submitBtn').disabled = !this.checked;
     });
     
-    // Initial state
+    // Initial state - button is disabled until consent is checked
     document.getElementById('submitBtn').disabled = true;
 
-    // Show success message after form submission
-    // Note: Formspree will handle the actual submission
-    const form = document.getElementById('signupForm');
-    form.addEventListener('submit', function(e) {
-      // Let Formspree handle the submission, but show success message
-      setTimeout(function() {
-        document.getElementById('successMessage').style.display = 'block';
-      }, 100);
-    });
+    // Form submission - Formspree handles everything, no preventDefault
+    // The form will submit normally to Formspree and redirect/show confirmation
   </script>
 </body>
 </html>
