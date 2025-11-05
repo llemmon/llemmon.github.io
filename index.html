@@ -82,6 +82,119 @@
       line-height: 1.8;
     }
     
+    /* Sign-up Form Styles */
+    .signup-form {
+      background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+      padding: 35px;
+      border-radius: 12px;
+      margin: 30px 0;
+      border: 2px solid #4caf50;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.15);
+    }
+    
+    .signup-form h3 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+      font-size: 1.05em;
+    }
+    
+    .form-group input[type="tel"],
+    .form-group input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input[type="tel"]:focus,
+    .form-group input[type="text"]:focus {
+      outline: none;
+      border-color: #4caf50;
+    }
+    
+    .consent-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 2px solid #4caf50;
+    }
+    
+    .consent-checkbox {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    
+    .consent-checkbox input[type="checkbox"] {
+      margin-right: 12px;
+      margin-top: 4px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    
+    .consent-text {
+      font-size: 0.95em;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .consent-text strong {
+      color: #2e7d32;
+    }
+    
+    .submit-btn {
+      background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    }
+    
+    .submit-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .form-note {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #856404;
+    }
+    
     .highlight-box {
       background: #e8f5e9;
       padding: 20px;
@@ -185,6 +298,10 @@
       header {
         padding: 30px 20px;
       }
+      
+      .signup-form {
+        padding: 25px 20px;
+      }
     }
   </style>
 </head>
@@ -207,21 +324,64 @@
         </div>
       </div>
 
+      <!-- NEW: Sign-up Form Section -->
       <div class="section">
-        <h2>SMS Messaging & Opt-In Process</h2>
+        <h2>Sign Up for SMS Reminders</h2>
+        
+        <div class="signup-form">
+          <h3>🔔 Start Receiving Daily Wellness Checks</h3>
+          
+          <form id="signupForm" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Mobile Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567" pattern="[0-9\s\-\(\)]+">
+            </div>
+            
+            <div class="consent-box">
+              <div class="consent-checkbox">
+                <input type="checkbox" id="smsConsent" name="smsConsent" required>
+                <label for="smsConsent" class="consent-text">
+                  <strong>I agree to receive daily wellness check text messages from Daily Wellness Check at the mobile number provided above.</strong> 
+                  I understand that I will receive approximately 1-3 automated SMS messages per day with wellness reminders, medication alerts, and health tracking prompts. 
+                  Message and data rates may apply. I can reply <strong>STOP</strong> at any time to unsubscribe or <strong>HELP</strong> for assistance. 
+                  I have read and agree to the <a href="privacy.html" target="_blank">Privacy Policy</a>.
+                </label>
+              </div>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">Subscribe to Daily Wellness Checks</button>
+            
+            <div class="form-note">
+              <strong>📱 What happens next:</strong> After you click "Subscribe," you will receive a confirmation text message. 
+              Reply <strong>YES</strong> to that message to activate your daily wellness check reminders.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>How Our SMS Service Works</h2>
         <div class="info-box">
-          <h3>How You Consent to Receive Messages</h3>
+          <h3>Opt-In Process</h3>
           <p>
-            Users provide explicit consent to receive SMS messages through one of the following methods:
+            To receive Daily Wellness Check messages, you must explicitly opt-in using the form above. Here's how it works:
           </p>
           <ul>
-            <li>Direct verbal consent via phone call where the user provides their phone number and confirms they wish to receive wellness check messages</li>
-            <li>Written consent via email requesting enrollment in the service</li>
-            <li>Explicit opt-in during initial setup where users provide their phone number specifically to receive daily wellness reminders</li>
+            <li>Fill out the sign-up form with your name and mobile phone number</li>
+            <li>Check the consent box agreeing to receive SMS messages</li>
+            <li>Click "Subscribe to Daily Wellness Checks"</li>
+            <li>You will receive a confirmation text message asking you to reply YES</li>
+            <li>Reply YES to activate your subscription (double opt-in for your protection)</li>
           </ul>
           
           <div class="highlight-box">
-            <p><strong>Message Frequency:</strong> Users will receive approximately 1-3 SMS messages per day, depending on their configured wellness check schedule.</p>
+            <p><strong>Message Frequency:</strong> You will receive approximately 1-3 SMS messages per day, depending on your configured wellness check schedule.</p>
+            <p><strong>Standard rates apply:</strong> Message and data rates from your mobile carrier may apply.</p>
           </div>
           
           <h3>Types of Messages You'll Receive</h3>
@@ -238,12 +398,12 @@
             You may stop receiving messages at any time by:
           </p>
           <ul>
-            <li>Replying STOP to any message</li>
+            <li>Replying STOP to any message (instant unsubscribe)</li>
             <li>Emailing larry.lemmon.ll@gmail.com with your opt-out request</li>
             <li>Calling (317)397-9578 to request removal</li>
           </ul>
           <p style="margin-top: 15px;">
-            There are no fees to opt-out. Standard message and data rates from your mobile carrier may apply to SMS messages.
+            There are no fees to opt-out. Unsubscribing is immediate and free.
           </p>
         </div>
       </div>
@@ -254,6 +414,7 @@
           <ul>
             <li>Email: larry.lemmon.ll@gmail.com</li>
             <li>Phone: (317)397-9578</li>
+            <li>Address: 4002 E County Rd 550 N, Pittsboro, IN 46167</li>
           </ul>
         </div>
       </div>
@@ -261,7 +422,7 @@
       <div class="section">
         <h2>Privacy Policy</h2>
         <div class="privacy-section">
-          <a href="privacy.html?v=20251025">View our Privacy Policy</a>
+          <a href="privacy.html?v=20251105">View our Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -275,5 +436,40 @@
       </p>
     </footer>
   </div>
+
+  <script>
+    // Basic form validation
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const consent = document.getElementById('smsConsent').checked;
+      const phone = document.getElementById('phone').value;
+      const name = document.getElementById('name').value;
+      
+      if (!consent) {
+        alert('Please check the consent box to agree to receive SMS messages.');
+        return;
+      }
+      
+      if (!phone || !name) {
+        alert('Please fill out all required fields.');
+        return;
+      }
+      
+      // In production, this would submit to your backend
+      alert('Thank you for signing up! You will receive a confirmation text message shortly. Please reply YES to activate your subscription.');
+      
+      // Reset form
+      this.reset();
+    });
+    
+    // Enable/disable submit button based on consent checkbox
+    document.getElementById('smsConsent').addEventListener('change', function() {
+      document.getElementById('submitBtn').disabled = !this.checked;
+    });
+    
+    // Initial state
+    document.getElementById('submitBtn').disabled = true;
+  </script>
 </body>
 </html>
